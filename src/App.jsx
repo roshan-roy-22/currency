@@ -5,10 +5,10 @@ import img1 from "./images/exchanging.png";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
 
 function App() {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState();
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("inr");
-  const [convertedAmount, setConvertedAmount] = useState(0);
+  const [convertedAmount, setConvertedAmount] = useState();
 
   const currencyInfo = useCurrencyInfo(from);
   const options = Object.keys(currencyInfo);
@@ -28,15 +28,15 @@ function App() {
       <div className="w-full h-4/5 flex flex-col justify-center items-center  ">
         <h1
           style={{ fontFamily: "initial" }}
-          className="text-6xl my-8 font-bold"
+          className="text-5xl max-md:text-3xl my-8 font-bold"
         >
           Currency Converter
         </h1>
         <div
-          className="grid grid-cols-2 border shadow-lg backdrop-blur-3xl bg-white rounded-xl p-12 max-w-xl"
+          className="grid grid-cols-2 max-lg:grid-cols-1 border shadow-lg backdrop-blur-3xl bg-white rounded-xl p-10 max-w-xl max-md:max-w-xs"
           style={{ boxShadow: "rgba(0, 0, 0, 0.56) 0px 22px 70px 4px" }}
         >
-          <div className="pt-5">
+          <div className="grid place-items-center">
             <img className="h-48" src={img1} alt="" />
           </div>
           <div>
